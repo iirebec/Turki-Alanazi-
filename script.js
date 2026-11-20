@@ -131,3 +131,8 @@
     try { localStorage.setItem("theme", root.dataset.theme); } catch (e) {}
   });
 })();
+
+/* Respect "reduce motion": freeze the hero animation */
+try {
+  if (matchMedia("(prefers-reduced-motion: reduce)").matches) document.getElementById("heroArt").pauseAnimations();
+} catch (e) {}

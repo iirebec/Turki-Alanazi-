@@ -11,7 +11,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="style.css?v=3">
   <script>
     try { var t = localStorage.getItem('theme'); if (t) document.documentElement.dataset.theme = t; } catch (e) {}
   </script>
@@ -47,7 +47,7 @@
           <div class="stats" id="stats"></div>
         </div>
         <div class="hero-art" aria-hidden="true">
-          <svg viewBox="0 0 420 420">
+          <svg viewBox="0 0 420 420" id="heroArt">
             <defs>
               <radialGradient id="sunG" cx="42%" cy="40%" r="62%">
                 <stop offset="0%" stop-color="#ffe3a3"/><stop offset="55%" stop-color="#fbbf3c"/><stop offset="100%" stop-color="#f08c1a"/>
@@ -60,13 +60,26 @@
               </linearGradient>
             </defs>
 
-            <!-- sun -->
-            <circle class="glow" cx="200" cy="170" r="125" fill="url(#glowG)"/>
-            <circle class="ring" cx="200" cy="170" r="150"/>
-            <circle class="ring" cx="200" cy="170" r="108"/>
-            <circle cx="200" cy="170" r="62" fill="url(#sunG)"/>
-            <g class="orbit"><circle cx="350" cy="170" r="9" class="dot-green"/></g>
-            <g class="orbit slow"><circle cx="200" cy="62" r="6.5" class="dot-blue"/></g>
+            <!-- sun + orbits (SVG-native rotation: same centre in every browser) -->
+            <circle class="glow" cx="190" cy="160" r="118" fill="url(#glowG)"/>
+            <circle class="ring" cx="190" cy="160" r="140"/>
+            <circle class="ring" cx="190" cy="160" r="100"/>
+            <circle cx="190" cy="160" r="58" fill="url(#sunG)"/>
+
+            <g>
+              <animateTransform attributeName="transform" type="rotate" from="0 190 160" to="360 190 160" dur="26s" repeatCount="indefinite"/>
+              <path class="trail green t2" d="M214.3 22.1 A140 140 0 0 1 297.2 70"/>
+              <path class="trail green t1" d="M297.2 70 A140 140 0 0 1 330 160"/>
+              <circle cx="330" cy="160" r="8" class="dot-green"/>
+            </g>
+            <g transform="rotate(160 190 160)">
+              <g>
+                <animateTransform attributeName="transform" type="rotate" from="0 190 160" to="360 190 160" dur="16s" repeatCount="indefinite"/>
+                <path class="trail blue t2" d="M207.4 61.5 A100 100 0 0 1 266.6 95.7"/>
+                <path class="trail blue t1" d="M266.6 95.7 A100 100 0 0 1 290 160"/>
+                <circle cx="290" cy="160" r="6" class="dot-blue"/>
+              </g>
+            </g>
 
             <!-- solar array -->
             <g class="array">
@@ -80,18 +93,19 @@
                 <polygon points="0,36 56,7 102,7 46,36" fill="url(#panelG)" class="panel"/>
                 <path class="cell" d="M19.3 26 L65.3 26 M38.6 16 L84.6 16 M71.3 7 L15.3 36 M86.7 7 L30.7 36"/>
               </g>
-              <path class="ground" d="M20 384 H400"/>
+              <path class="ground" d="M20 384 H405"/>
             </g>
 
             <!-- wind turbine -->
-            <g class="turbine" transform="translate(338 236)">
-              <polygon class="tower" points="-2.4,0 2.4,0 4.6,148 -4.6,148"/>
-              <g class="blades">
-                <path d="M0 0 C -5 -18 -5 -40 0 -62 C 4 -40 5 -18 0 0 Z"/>
-                <path d="M0 0 C -5 -18 -5 -40 0 -62 C 4 -40 5 -18 0 0 Z" transform="rotate(120)"/>
-                <path d="M0 0 C -5 -18 -5 -40 0 -62 C 4 -40 5 -18 0 0 Z" transform="rotate(240)"/>
+            <g class="turbine" transform="translate(362 250)">
+              <polygon class="tower" points="-2.4,0 2.4,0 4.6,134 -4.6,134"/>
+              <g>
+                <animateTransform attributeName="transform" type="rotate" from="0 0 0" to="360 0 0" dur="4s" repeatCount="indefinite"/>
+                <path class="blade" d="M0 0 C -4.5 -16 -4.5 -34 0 -52 C 3.6 -34 4.5 -16 0 0 Z"/>
+                <path class="blade" d="M0 0 C -4.5 -16 -4.5 -34 0 -52 C 3.6 -34 4.5 -16 0 0 Z" transform="rotate(120)"/>
+                <path class="blade" d="M0 0 C -4.5 -16 -4.5 -34 0 -52 C 3.6 -34 4.5 -16 0 0 Z" transform="rotate(240)"/>
               </g>
-              <circle class="hub" r="5.5"/>
+              <circle class="hub" r="5"/>
             </g>
           </svg>
         </div>
@@ -154,7 +168,7 @@
     <div id="modalBody"></div>
   </dialog>
 
-  <script src="content.js"></script>
-  <script src="script.js"></script>
+  <script src="content.js?v=3"></script>
+  <script src="script.js?v=3"></script>
 </body>
 </html>
