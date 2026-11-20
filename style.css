@@ -158,3 +158,21 @@ dialog .close { position: absolute; top: 12px; right: 12px; z-index: 2; width: 3
 .gallery img { border-radius: 12px; border: 1px solid var(--line); background: #fff; }
 .tl-link { display: inline-block; margin-top: 8px; font-weight: 600; font-size: .9rem; }
 .card-cat { font-size: .78rem; font-weight: 600; letter-spacing: .08em; text-transform: uppercase; color: var(--accent); margin-bottom: 6px; }
+
+/* ===== Hero illustration (theme-aware, so browser dark modes don't recolour it) ===== */
+:root { color-scheme: light; --art-ink: #4f6157; --art-ring: #c9d8ce; --panel-a: #2a4f86; --panel-b: #17345e; --panel-line: rgba(255,255,255,.35); }
+:root[data-theme="dark"] { color-scheme: dark; --art-ink: #c6d4cb; --art-ring: #2d4035; --panel-a: #4c82c9; --panel-b: #24497e; --panel-line: rgba(255,255,255,.28); }
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) { color-scheme: dark; --art-ink: #c6d4cb; --art-ring: #2d4035; --panel-a: #4c82c9; --panel-b: #24497e; --panel-line: rgba(255,255,255,.28); } }
+.hero-art .ring { fill: none; stroke: var(--art-ring); stroke-width: 1.5; stroke-dasharray: 3 7; }
+.hero-art .dot-green { fill: var(--accent); }
+.hero-art .dot-blue { fill: var(--sky); }
+.hero-art .panel-a { stop-color: var(--panel-a); }
+.hero-art .panel-b { stop-color: var(--panel-b); }
+.hero-art .cell { stroke: var(--panel-line); stroke-width: 1; fill: none; }
+.hero-art .leg, .hero-art .ground { stroke: var(--art-ink); stroke-width: 3; stroke-linecap: round; fill: none; }
+.hero-art .ground { stroke-width: 1.5; opacity: .35; stroke-dasharray: 2 6; }
+.hero-art .tower, .hero-art .blades path, .hero-art .hub { fill: var(--art-ink); }
+.hero-art .glow { animation: pulse 6s ease-in-out infinite; transform-origin: 200px 170px; }
+.hero-art .orbit { transform-origin: 200px 170px; }
+@keyframes pulse { 50% { opacity: .55; transform: scale(1.06); } }
+@media (prefers-reduced-motion: reduce) { .hero-art .glow { animation: none; } }

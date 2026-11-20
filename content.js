@@ -35,7 +35,7 @@ window.PORTFOLIO = {
 
   /* Big numbers shown at the top. Keep 3–4. */
   stats: [
-    { value: "Top 35",  label: "of 1,200 teams, Energy Hackathon" },
+    { value: "Top 35",  label: "of 1,200 teams · Ministry of Energy Hackathon" },
     { value: "4 GW",    label: "power plant internship" },
     { value: "3.70",    label: "GPA / 4.0" }
   ],

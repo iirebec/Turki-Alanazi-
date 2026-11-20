@@ -3,6 +3,8 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light dark">
+  <meta name="darkreader-lock">
   <title>Portfolio</title>
   <meta name="description" content="Renewable energy engineering portfolio — simulations, system design and analysis.">
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><circle cx='16' cy='16' r='7' fill='%23f5a524'/></svg>">
@@ -45,25 +47,51 @@
           <div class="stats" id="stats"></div>
         </div>
         <div class="hero-art" aria-hidden="true">
-          <svg viewBox="0 0 400 400">
+          <svg viewBox="0 0 420 420">
             <defs>
-              <radialGradient id="sunG" cx="50%" cy="50%" r="50%">
-                <stop offset="0%" stop-color="#ffd27a"/><stop offset="100%" stop-color="#f5a524"/>
+              <radialGradient id="sunG" cx="42%" cy="40%" r="62%">
+                <stop offset="0%" stop-color="#ffe3a3"/><stop offset="55%" stop-color="#fbbf3c"/><stop offset="100%" stop-color="#f08c1a"/>
               </radialGradient>
+              <radialGradient id="glowG" cx="50%" cy="50%" r="50%">
+                <stop offset="0%" stop-color="#f5a524" stop-opacity=".45"/><stop offset="100%" stop-color="#f5a524" stop-opacity="0"/>
+              </radialGradient>
+              <linearGradient id="panelG" x1="0" y1="0" x2="1" y2="1">
+                <stop offset="0%" class="panel-a"/><stop offset="100%" class="panel-b"/>
+              </linearGradient>
             </defs>
-            <circle class="ring r1" cx="200" cy="200" r="150"/>
-            <circle class="ring r2" cx="200" cy="200" r="110"/>
-            <circle cx="200" cy="200" r="58" fill="url(#sunG)"/>
-            <g class="orbit"><circle cx="350" cy="200" r="9" fill="var(--accent)"/></g>
-            <g class="orbit slow"><circle cx="200" cy="90" r="6" fill="var(--sky)"/></g>
-            <g class="turbine" transform="translate(320 300)">
-              <line x1="0" y1="0" x2="0" y2="80" stroke="var(--ink-2)" stroke-width="4" stroke-linecap="round"/>
-              <g class="blades">
-                <path d="M0 0 L-4 -46 L0 -50 L4 -46 Z" fill="var(--ink-2)"/>
-                <path d="M0 0 L-4 -46 L0 -50 L4 -46 Z" fill="var(--ink-2)" transform="rotate(120)"/>
-                <path d="M0 0 L-4 -46 L0 -50 L4 -46 Z" fill="var(--ink-2)" transform="rotate(240)"/>
+
+            <!-- sun -->
+            <circle class="glow" cx="200" cy="170" r="125" fill="url(#glowG)"/>
+            <circle class="ring" cx="200" cy="170" r="150"/>
+            <circle class="ring" cx="200" cy="170" r="108"/>
+            <circle cx="200" cy="170" r="62" fill="url(#sunG)"/>
+            <g class="orbit"><circle cx="350" cy="170" r="9" class="dot-green"/></g>
+            <g class="orbit slow"><circle cx="200" cy="62" r="6.5" class="dot-blue"/></g>
+
+            <!-- solar array -->
+            <g class="array">
+              <g transform="translate(40 318)">
+                <path class="leg" d="M22 40 V58 M88 26 V58"/>
+                <polygon points="0,44 70,8 128,8 58,44" fill="url(#panelG)" class="panel"/>
+                <path class="cell" d="M23.3 32 L81.3 32 M46.7 20 L104.7 20 M84.5 8 L14.5 44 M99 8 L29 44 M113.5 8 L43.5 44"/>
               </g>
-              <circle r="5" fill="var(--ink-2)"/>
+              <g transform="translate(150 336)">
+                <path class="leg" d="M18 32 V44 M70 20 V44"/>
+                <polygon points="0,36 56,7 102,7 46,36" fill="url(#panelG)" class="panel"/>
+                <path class="cell" d="M19.3 26 L65.3 26 M38.6 16 L84.6 16 M71.3 7 L15.3 36 M86.7 7 L30.7 36"/>
+              </g>
+              <path class="ground" d="M20 384 H400"/>
+            </g>
+
+            <!-- wind turbine -->
+            <g class="turbine" transform="translate(338 236)">
+              <polygon class="tower" points="-2.4,0 2.4,0 4.6,148 -4.6,148"/>
+              <g class="blades">
+                <path d="M0 0 C -5 -18 -5 -40 0 -62 C 4 -40 5 -18 0 0 Z"/>
+                <path d="M0 0 C -5 -18 -5 -40 0 -62 C 4 -40 5 -18 0 0 Z" transform="rotate(120)"/>
+                <path d="M0 0 C -5 -18 -5 -40 0 -62 C 4 -40 5 -18 0 0 Z" transform="rotate(240)"/>
+              </g>
+              <circle class="hub" r="5.5"/>
             </g>
           </svg>
         </div>
@@ -112,7 +140,7 @@
     <section class="section contact" id="contact">
       <div class="wrap">
         <h2>Let's work together</h2>
-        <p class="lead">Open to internships, graduate roles and research in solar, storage, hydrogen and power systems.</p>
+        <p class="lead">Open to full-time roles in solar, energy storage, hydrogen and power systems.</p>
         <div class="cta center" id="contactLinks"></div>
       </div>
     </section>
