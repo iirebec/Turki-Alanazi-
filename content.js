@@ -29,7 +29,7 @@ window.PORTFOLIO = {
   github: "",                      // paste your GitHub link here (optional)
 
   about: [
-    "I'm a senior Renewable Energy Engineering student at the University of Ha'il (GPA 3.70 / 4.0), graduating in 2027. My work sits where engineering fundamentals meet simulation: solar–battery dispatch, hydrogen sensing and machine learning, and multiphysics heat recovery.",
+    "I'm a senior Renewable Energy Engineering student at the University of Ha'il (GPA 3.70 / 4.0), graduating in 2027. My work sits where engineering fundamentals meet simulation and data, applied across the energy sector, from power generation and energy storage to emerging clean-energy technologies.",
     "In summer 2026 I interned at ACWA Power's 4 GW Qurayyah combined-cycle plant, working across the mechanical, electrical, instrumentation, RO and electrolyser departments. I have led teams in two national competitions, the Ministry of Energy Hackathon (top 35 of 1,200 teams) and Future Minerals Pioneers. In both I set the technical direction, divided the work across the team and took each project from first idea to a finished simulation and technical report."
   ],
 
