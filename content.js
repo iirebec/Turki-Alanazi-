@@ -19,7 +19,7 @@ window.PORTFOLIO = {
 
   /* ---------- About you ---------- */
   name: "Turki Alanazi",
-  role: "Renewable Energy Engineering Student",
+  role: "Renewable Energy Engineering Graduate · Class of 2027",
   tagline: "I build simulations that turn clean-energy ideas into numbers, from solar-timed mining plants to AI-assisted hydrogen safety.",
   location: "Hail, Saudi Arabia",
   photo: "",                       // e.g. "assets/me.jpg". Leave "" to show initials.
