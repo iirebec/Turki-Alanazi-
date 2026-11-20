@@ -30,7 +30,7 @@ window.PORTFOLIO = {
 
   about: [
     "I'm a senior Renewable Energy Engineering student at the University of Ha'il (GPA 3.70 / 4.0), graduating in 2027. My work sits where engineering fundamentals meet simulation: solar–battery dispatch, hydrogen sensing and machine learning, and multiphysics heat recovery.",
-    "In summer 2026 I interned at ACWA Power's 4 GW Qurayyah combined-cycle plant, working across the mechanical, electrical, instrumentation, RO and electrolyser departments. I lead teams in national energy and minerals competitions and care about results that are honest about their assumptions and limits."
+    "In summer 2026 I interned at ACWA Power's 4 GW Qurayyah combined-cycle plant, working across the mechanical, electrical, instrumentation, RO and electrolyser departments. I have led teams in two national competitions, the Ministry of Energy Hackathon (top 35 of 1,200 teams) and Future Minerals Pioneers. In both I set the technical direction, divided the work across the team and took each project from first idea to a finished simulation and technical report."
   ],
 
   /* Big numbers shown at the top. Keep 3–4. */
